@@ -4,6 +4,22 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import VueResource from 'vue-resource'
+
+import './assets/css/base.css'
+import './assets/css/header.css'
+import './assets/css/aside.css'
+import './assets/css/footer.css'
+import './assets/css/nav.css'
+import './assets/css/index.css'
+import './assets/css/forum_page.css'
+import './assets/css/read_page.css'
+import './assets/css/video_page.css'
+import './assets/css/login.css'
+import './assets/css/register.css'
+
+Vue.use(VueResource)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

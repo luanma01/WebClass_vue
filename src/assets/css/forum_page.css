@@ -1,0 +1,65 @@
+
+/*发送消息栏*/
+#send{
+	position:absolute;
+	height:40px;
+	bottom:5px;
+	border:1px solid #efefef;
+	border-radius:10px;
+	display:flex;
+	justify-content:flex-end;
+	margin-left:70px;
+	width:600px;
+	box-sizing:border-box;
+}
+#send span{
+	line-height:36px;
+}
+#send-msg{
+	height: 36px;
+    width: 350px;
+    margin-left: 10px;
+    background: #191919;
+    border: none;
+	color:#efefef;
+	font-size:18px;
+}
+#send input:focus{
+	outline:none;
+}
+
+#send>input:last-child{
+	width:100px;
+	height:38px;
+	background:linear-gradient(to bottom,#ccc,#191929 50%,#191909 75%,#000);
+	border-radius:10px;
+	color:#efefef;
+	line-height:36px;
+	font-size:18px;
+	border-color: #aaa;
+    border-bottom: none;
+    border-top: none;
+}
+/*显示消息栏*/
+#show-msg{
+	list-style:none;
+}
+#show-msg>li{
+	width:700px;
+	margin:0 auto;
+}
+#show-msg h3{
+	color:#efefef;
+	font-weight:bold;
+	margin-left:80px;
+	font-size:24px;
+}
+#show-msg p{
+	display:flex;
+	justify-content:space-between;
+	margin:5px auto;
+}
+#show-msg p span{
+	color:#666666;
+	font-size:18px;
+}

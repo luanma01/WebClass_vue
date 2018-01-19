@@ -1,0 +1,31 @@
+body{
+	background:#000 url("http://www.codeboy.com/pro/u00100001/fanying/images/bg-4.png") no-repeat center 15%;
+}
+div.main{
+  width:960px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,div,body,pre{
+  margin:0;
+  padding:0;
+  font:normal normal 16px Arial;
+  color:#666;
+  list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#efefef;
+	text-align:center;
+}
+a:focus{
+	outline:none!important;
+}
+input:focus{
+	outline:none!important;
+}
+input[type="button"]:active{
+	border-style:inset;
+}

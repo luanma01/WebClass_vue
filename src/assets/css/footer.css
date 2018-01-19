@@ -1,0 +1,20 @@
+#footer-content{
+	margin-top:100px;
+	display:flex;
+	justify-content:center;
+/*	background:linear-gradient(to bottom,#ccc,#191919 15%,#191919 80%,#000);*/
+	width:960px;
+	min-height:100px;
+	text-align:center;
+}
+#footer-content>div:first-child{
+	width:80%;
+}
+#footer-content p:first-child{
+/*	border-bottom:1px solid #ccc;*/
+	margin:20px auto;
+	padding:10px 0;
+}
+#footer-content a{
+	color:#666;
+}

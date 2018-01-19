@@ -1,0 +1,48 @@
+
+div.header{
+	width:960px;
+	margin:0 auto;
+}
+.link{
+	color:#efefef;
+	text-decoration:none;
+	text-align:center;
+}
+#top{
+	margin:50px auto 5px auto;
+	padding:0 20px;
+	height:120px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	background: linear-gradient(to bottom,#ccc,#191929 10%,#191909 90%,#000);
+}
+#top-search{
+	border:1px solid #808080;
+	border-radius:10px;
+	display:flex;
+	height:34px;
+}
+#top-search input{
+	border:none;
+	width:350px;
+	height:34px;
+	font-size:24px;
+	padding-left:10px;
+	background:#191919;
+	color:#efefef;
+}
+#top-login .link{
+	margin:0 10px;
+}
+#top-login b{
+	color:#efefef;
+}
+#top-login ul{
+	list-style:none;
+	display:flex;
+}
+#top-login li{
+	line-height: 23px;
+    font-size: 18px;
+}

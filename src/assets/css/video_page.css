@@ -1,0 +1,53 @@
+section{
+	width:750px;
+	position:relative;
+}
+#rt_nav{
+	position:absolute;
+	right:0;
+	width:150px;
+	min-height:500px;
+	background:#191919;
+	list-style:none;
+	text-align:center;
+}
+#rt_nav>li{
+	margin:10px 0px;
+}
+#rt_nav>li>h3{
+	font-size:20px;
+	margin:35px auto;
+}
+#rt_nav>li>a{
+	display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 36px;
+    background: linear-gradient(to bottom,#ccc,#191929 30%,#191909 70%,#000);
+}
+/*下拉列表*/
+#movieList>li,#videoList>li{
+	/*height:0;*/
+	/**/
+	overflow:hidden;
+	line-height:25px;
+}
+#movieList>li>a,#videoList>li>a{
+	display: inline-block;
+    height: 30px;
+    line-height: 30px;
+	font-size:15px;
+	transition:all .5 linear;
+}
+#movieList>li>a:hover,#videoList>li>a:hover{
+	transform:translate(-2px);
+}
+#movieList>li>a:active,#videoList>li>a:active{
+	color:#fff;
+}
+
+#video{
+	width:595px;
+	height:495px;
+	background:rgba(0,0,0,1);
+}

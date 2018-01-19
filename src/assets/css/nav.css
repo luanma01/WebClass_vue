@@ -1,0 +1,21 @@
+/*nav*/
+#nav{
+	display:flex;
+	list-style:none;
+	justify-content:space-between;
+	width:960px;
+}
+#nav>li:first-child{
+	width:200px;
+}
+#nav>li:last-child{
+	width:750px;
+}
+#nav a{
+    font-weight: bold;
+    line-height: 34px;
+	display:inline-block;
+	width:100%;
+    height: 32px;
+	background: linear-gradient(to bottom,#ccc,#191929 40%,#191909 70%,#000);
+}

@@ -1,0 +1,52 @@
+section{
+	position:relative;
+	width:750px;
+}
+section>form{
+	width: 500px;
+    height: 380px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+	border:1px solid #efefef;
+	border-radius:10px;
+}
+section>form>div{
+	margin:0 auto;
+}
+section form>div>p{
+	font-size:24px;
+	color:#efefef;
+	text-align:center;
+	margin:30px auto;
+}
+section form>div input{
+	width: 255px;
+    height: 24px;
+    background: transparent;
+    border-radius: 10px;
+    color: #efefef;
+    padding-left: 10px;
+}
+section form h2{
+	font-size:32px;
+	font-weight:bold;
+	text-align:center;
+	color:#efefef;
+	margin:30px auto 10px auto;
+}
+section form input:focus{
+	outline:none;
+}
+#btnReg{
+	width: 100px;
+    height: 50px;
+    font-size: 28px;
+}
+#checkMsg{
+	display:inline-block;
+	width:225px;
+}

@@ -1,0 +1,97 @@
+section{
+	width:750px;
+	position:relative;
+}
+#rt_nav{
+	position:absolute;
+	right:0;
+	width:150px;
+	min-height:500px;
+	background:#191919;
+	list-style:none;
+	text-align:center;
+}
+#rt_nav>li{
+	margin:10px 0px;
+}
+#rt_nav>li>h3{
+	font-size:20px;
+	margin:35px auto;
+}
+#rt_nav>li>a{
+	display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 36px;
+    background: linear-gradient(to bottom,#ccc,#191929 30%,#191909 70%,#000);
+}
+
+/*readPage页面样式*/
+#readPage{
+	width:600px;
+	height:500px;
+}
+#readPage>textarea{
+	width:595px;
+	height:495px;
+	background-color: transparent;
+    color: #666;
+    border: none;
+    font-size: 16px;
+}
+#readPage>textarea:focus{
+	outline:none;
+}
+#readPage>textarea::-webkit-scrollbar{
+	background-color:transparent;
+}
+#readPage>textarea::-webkit-scrollbar-track{
+	background-color:transparent;
+}
+#readPage>textarea::-webkit-scrollbar-thumb{
+	border:1px solid #666;
+	border-radius:10px;
+	background:transparent;
+}
+#readPage>textarea::-webkit-scrollbar-corner{
+	background:transparent;
+	border:none;
+	outline:none;
+}
+#readPage>ul{
+	display:flex;
+	flex-wrap:wrap;
+}
+#readPage>ul>li{
+	border: 1px groove #efefef;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 35px;
+    height: 200px;
+	width:120px;
+	overflow:hidden;
+}
+#readPage>ul>li:hover{
+	border-style:inset;
+}
+
+#readPage>ul>li img{
+	width:120px;
+	height:120px;
+}
+#readPage>ul>li h2{
+	font-weight:bold;
+	color:#ccc;
+	text-align:center;
+	margin:10px 0;
+	cursor:pointer;
+}
+#readPage>ul>li h2:hover{
+	color:#efefef;
+}
+#readPage>ul>li p{
+	text-align:left;
+	font-size:10px;
+}
+
