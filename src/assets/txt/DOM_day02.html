@@ -1,0 +1,103 @@
+
+  正课: 
+1. 修改
+2. 添加/删除
+
+1. 修改: 
+内容:
+属性: 3种: 
+ 1. html标准属性: HTML标准规定的属性
+  2种:
+   1. 核心DOM: 
+    什么是: 最初制定的操作一切结构化文档的DOM
+      特点: 优: 万能, 即支持HTML，又支持XML
+            缺: API繁琐
+    如何: 获取标准属性值: elem.getAttribute("属性名")
+          修改标准属性值: elem.setAttribute("属性名",值)
+          判断是否包含标准属性: elem.hasAttribute("属性名")
+          移除标准属性: elem.removeAttribute("属性名")
+   2. HTML DOM: 
+    什么是: 对部分常用核心DOM功能提供的简化版API
+      特点: 优: 简单;   缺: 不是万能
+      如何: HTML DOM已经将HTML标准属性提前封装在了元素对象上。默认值为""。
+        所以: elem.标准属性
+          获取: elem.标准属性
+          修改: elem.标准属性=值
+          判断是否包含: elem.标准属性!==""
+          移除: elem.标准属性=""
+        特例: class属性->className
+          elem.className
+ 2. 状态属性: disabled    checked    selected  ——bool
+   不能用核心DOM操作
+   只能用HTML DOM操作
+ 3. 自定义扩展属性:
+   什么是: HTML中没有定义的，自定义的新属性
+   何时: 2种: 
+     1. 希望在元素上保存自定义的业务数据
+     2. 专门用于为元素添加事件行为
+   如何: html5的标准
+     定义: <ANY data-属性名="值">
+     访问: ANY.dataset.属性名
+     原理: dom会自动将开始标签中data-开头的自定义扩展属性，集中保存在元素对象的dataset属性中
+     强调: data-只是格式要求的前缀，不属于属性名
+
+样式: 2种
+ 1. 内联样式: 
+   修改: elem.style.css属性名
+   获取: 
+    问题: elem.style.css属性名 只能获得内联样式
+    解决: 获得计算后的完整样式:
+      什么是计算后的完整样式: 最终应用到元素上的所有样式的总和
+      如何获得计算后的完整样式: 2步:
+       1. 获得计算后的完整style对象: 
+         var style=getComputedStyle(elem)
+       2. 获得style中的某个具体css属性:
+         style.css属性
+      强调: getComputedStyle获取的样式是只读的
+           要想修改，只能用elem.style
+           好处: 修改的是内联样式: 
+             1.仅当前元素受影响
+             2. 优先级最高！
+ 2. 样式表中的样式: 
+  不推荐修改
+  1. 获得样式表对象: var sheet=document.styleSheets[i];
+  2. 获得样式表中一个规则: var rule=sheet.cssRules[i];
+      如果rule是一个keyframes，还要进一步获得子规则rule
+  3. 修改rule中的样式规则:
+      rule.style.css属性=值
+ 问题: 一句话只能修改一个属性: 
+  1. 代码冗余: 
+  2. 效率: 反复修改多个属性，会导致多次layout
+    html -> DOM Tree
+           ↓
+         Render Tree->***layout***->paint
+           ↑           重排     重绘
+    css -> cssRules
+    比如: 
+     elem.style.width=100px
+     elem.style.height=100px
+          ↓
+     解决: elem.style.cssText="width:100px;height:100px";
+          一次layout
+     问题: 无法解决代码冗余的问题
+     解决: 用class批量修改样式:
+        elem.className="class"
+        elem.className=""
+
+2. 添加和删除:
+ 添加: 3步:
+  1. 创建空元素: var elem=document.createElement("标签名");
+   var a=document.createElement("a");
+   <a></a>
+  2. 设置关键属性: elem.属性名=值
+   a.href="http://tmooc.cn";  a.innerHTML="go to tmooc";
+   <a href=" http://tmooc.cn "> go to tmooc </a>
+  3. 将新元素添加到指定父元素下
+   末尾追加: parent.appendChild(a)
+   中间插入: parent.insertBefore(a, child) 将a插入到child之前
+   替换: parent.replaceChild(a,child) 用a替换现有child
+
+ 优化: 尽量减少操作DOM树的次数，为了减少layout
+   如何: 2种: 
+    1. 如果同时添加父元素和子元素时
+       应该现在内存中，将所有子元素添加到父元素，最后，再将父元素一次性添加到DOM树

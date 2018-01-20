@@ -18,6 +18,7 @@ import './assets/css/video_page.css'
 import './assets/css/login.css'
 import './assets/css/register.css'
 
+
 Vue.use(VueResource)
 
 Vue.config.productionTip = false

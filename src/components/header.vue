@@ -24,11 +24,11 @@
 
                 <ul id="welcomeList" class="list" v-if="isLogin">
                     <li>
-                        <a class="link" href="javascript:;">欢迎：<span id="uname"></span></a>
+                        <a class="link" href="javascript:;">欢迎：<span id="uname"> {{uname}} </span></a>
                         <b>|</b>
                     </li>
                     <li>
-                        <a id="logout" href="javascript:;">注销</a>
+                        <a id="logout" @click="doLogout" href="javascript:;">注销</a>
                     </li>
                 </ul>
 
@@ -42,9 +42,22 @@
 <script>
     export default {
         name: "HeaderComponent",
-        data() {
+        data () {
             return {
-                isLogin:false
+                isLogin: false
+            }
+        },
+        beforeMount () {
+            this.doIsLogin()
+        },
+        methods: {
+            doIsLogin: function () {
+                this.$http.get('' +
+                    'http://127.0.0.1/program/WebClass_vue/src/assets/data/routes/isLogin.php' +
+                    '').then(res => {
+                    console.log(res.ok);
+                    // to do check error, not exists SESSION
+                })
             }
         }
 
