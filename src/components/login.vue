@@ -38,6 +38,8 @@
                         this.checkMsg = '用户名或密码错误!'
                     else{
                         this.checkMsg = '还没账号？去注册'
+                        // this.sessionId=res.body.uid;
+                        this.$emit('recSession', res.body.uid)
                         this.$router.push('/')
                     }
                 })

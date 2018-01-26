@@ -43,7 +43,7 @@ function login(){
 		if(count($user)!=0){//如果有结果
 			session_start();//打开session
 			$_SESSION["uid"]=$user[0]["uid"];
-			echo json_encode(["code"=>1,"msg"=>'success']);//登录成功
+			echo json_encode(["code"=>1,"msg"=>'success',"uid"=>$user[0]["uid"]]);//登录成功
 		}else//否则
             echo json_encode(["code"=>-1,"msg"=>'fail']);//登录失败
 	}

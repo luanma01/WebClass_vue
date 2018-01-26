@@ -1,8 +1,8 @@
 <template>
     <div class="main">
-        <header-component></header-component>
+        <header-component :sessionId="sessionId"></header-component>
         <aside-component></aside-component>
-        <router-view></router-view>
+        <router-view @recSession="sessionFunc"></router-view>
         <footer-component></footer-component>
     </div>
 </template>
@@ -18,7 +18,21 @@
             AsideComponent,
             FooterComponent
         },
-        name: 'HomeComponent'
+        name: 'HomeComponent',
+        sessionId: '',
+        data: function () {
+            return {
+                sessionId: ''
+            }
+        },
+        methods: {
+            sessionFunc: function (id) {
+                this.sessionId = id
+                // console.log(id)
+                // this.setData({sessionId: id})
+                // console.log(this.sessionId)
+            }
+        }
     }
 </script>
 

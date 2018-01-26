@@ -41,24 +41,31 @@
 
 <script>
     export default {
-        name: "HeaderComponent",
+        name: 'HeaderComponent',
+        props: ['sessionId'],
         data () {
             return {
-                isLogin: false
+                isLogin: false,
+                userId: ''
             }
         },
-        beforeMount () {
+        mounted () {
+            console.log('header')
             this.doIsLogin()
+            // console.log(this.userId)
         },
         methods: {
             doIsLogin: function () {
-                this.$http.get('' +
-                    'http://127.0.0.1/program/WebClass_vue/src/assets/data/routes/isLogin.php' +
-                    '').then(res => {
-                    console.log(res.ok);
+                this.$http.get('http://127.0.0.1/program/WebClass_vue/src/assets/data/routes/isLogin.php')
+                    .then(res => {
+                    console.log(res)
                     // to do check error, not exists SESSION
                 })
-            }
+            },
+            // checkLogin: () => {
+            //     // this.setData({userId: this.props.sessionId})
+            //     console.log(this.props)
+            // }
         }
 
     }
